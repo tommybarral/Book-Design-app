@@ -1,3 +1,4 @@
+import 'package:book_design_app/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/welcome_screen.dart';
 
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.black,),
         ),
         actions: [
-          IconButton(onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (_) { return const HomeScreen();}));}, icon: const Icon(Icons.home_outlined, color: Colors.black,),),
+          IconButton(onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (_) { return SignInScreen();}));}, icon: const Icon(Icons.person_outline, color: Colors.black,),),
         ],
       ),
       body: SafeArea(
