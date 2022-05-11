@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {
-  SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({Key? key}) : super(key: key);
+
+  static const routeName = '/sign-in';
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -75,7 +77,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Container(
                         height: 1,
                         width: 57,
-                        margin: EdgeInsets.only(top: 5),
+                        margin: const EdgeInsets.only(top: 5),
                         color: Colors.indigo[900],
                       ),
                     ],
@@ -94,7 +96,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Container(
                         height: 1,
                         width: 135,
-                        margin: EdgeInsets.only(top: 5),
+                        margin: const EdgeInsets.only(top: 5),
                         color: Colors.indigo[900],
                       ),
                     ],

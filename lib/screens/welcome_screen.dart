@@ -4,6 +4,7 @@ import '../screens/home_screen.dart';
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
+  static const routeName = '/welcome-screen';
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
