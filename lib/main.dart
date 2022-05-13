@@ -3,10 +3,16 @@ import 'package:book_design_app/screens/book_details_screen.dart';
 import 'package:book_design_app/screens/home_screen.dart';
 import 'package:book_design_app/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import './screens/welcome_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 

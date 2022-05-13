@@ -33,7 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 300,
+                  height: MediaQuery.of(context).size.height < 550 ? 240 : 300,
                   width: double.infinity,
                     child: PageView.builder(
                         itemCount: _greetings.length,

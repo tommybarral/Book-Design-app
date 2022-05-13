@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 50),
                             child: Container(
-                              height: 230,
+                              height: MediaQuery.of(context).size.height < 550 ? 145 : 250, // 230
                               width: double.infinity,
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -59,9 +59,9 @@ class HomeScreen extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                height: 250,
-                                width: 170,
-                                margin: const EdgeInsets.all(10),
+                                height: MediaQuery.of(context).size.height < 550 ? 165 : 250, //250
+                                width: MediaQuery.of(context).size.width < 340 ? 100 : 170, //170
+                                //margin: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                     boxShadow: [
@@ -82,36 +82,70 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Container(
                                       margin: const EdgeInsets.only(top: 50),
-                                      height: 50,
-                                      width: 120,
-                                      child: Text(
+                                      height: MediaQuery.of(context).size.height < 550 ? 30 : 70,
+                                      width: MediaQuery.of(context).size.height < 340 ? 120 : 165,
+                                      child: MediaQuery.of(context).size.height < 550 ? FittedBox(
+                                        child: Text(
+                                          loadedBookData[index].title,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ) : Text(
                                         loadedBookData[index].title,
                                         style: const TextStyle(
-                                            fontSize: 22,
+                                            fontSize: 26,
                                             fontWeight: FontWeight.w600,
                                             color: Colors.grey,
                                         ),
                                       ),
                                     ),
                                     Container(
-                                        height: 50,
-                                        width: 130,
-                                        margin: const EdgeInsets.only(top: 10),
-                                        child: Text('Author: ${loadedBookData[index].author}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),)),
+                                      height: MediaQuery.of(context).size.height < 550 ? 20 : 70,
+                                      width: MediaQuery.of(context).size.height < 340 ? 120 : 165,
+                                        child: MediaQuery.of(context).size.height < 550 ? FittedBox(
+                                          child: Text(
+                                            'author: ${loadedBookData[index].author}',
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                        ) : Text(
+                                          'author: ${loadedBookData[index].author}',
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.blue,
+                                          ),
+                                        ),),
                                     Container(
                                       height: 2,
-                                      width: 175,
+                                      width: MediaQuery.of(context).size.width < 330 ? 145 : 175,
                                       margin: const EdgeInsets.only(top: 5, bottom: 10),
-                                      color: Colors.grey,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
                                     ),
                                     SizedBox(
-                                      height: 55,
-                                      width: 125,
-                                      child: Text(
+                                      height: MediaQuery.of(context).size.height < 550 ? 55 : 75,
+                                      width: MediaQuery.of(context).size.height < 340 ? 120 : 165,
+                                      child: MediaQuery.of(context).size.height < 550 ? Text(
                                         loadedBookData[index].description,
                                         style: const TextStyle(
                                           fontSize: 16,
-                                          fontWeight: FontWeight.w800,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.grey,
+                                        ),
+                                      ) : Text(
+                                        loadedBookData[index].description,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
                                           color: Colors.grey,
                                         ),
                                       ),

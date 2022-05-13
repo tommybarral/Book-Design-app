@@ -12,6 +12,7 @@ class BookDetailsScreen extends StatelessWidget {
     final bookId = ModalRoute.of(context)!.settings.arguments as String;
     final bookData = Provider.of<BookData>(context).bookItems.firstWhere((book) => book.id == bookId);
     final appBar = AppBar(title: Text(bookData.title), centerTitle: true,);
+    final scale = MediaQuery.of(context).textScaleFactor;
     return Scaffold(
       appBar: appBar,
       body: Column(
@@ -28,10 +29,10 @@ class BookDetailsScreen extends StatelessWidget {
             children: [
               Container(
                   height: (MediaQuery.of(context).size.height - appBar.preferredSize.height - MediaQuery.of(context).padding.top) * 0.47,
-                  margin: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.only(top: 5),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25),),
                   boxShadow: [
                     BoxShadow(color: Colors.grey.withOpacity(0.5), offset: const Offset(-4, -4), blurRadius: 4,),
                     BoxShadow(color: Colors.grey.withOpacity(0.6), offset: const Offset(4, 4), blurRadius: 4,),
@@ -48,13 +49,13 @@ class BookDetailsScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(bookData.title, style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: Colors.indigo[900]),),
-                                Text('${bookData.price} €', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: Colors.indigo[900]),),
+                                Text(bookData.title, style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w800, color: Colors.indigo[900]), textScaleFactor: 0.7,),
+                                Text('${bookData.price} €', style: TextStyle(fontSize: 28 * scale, fontWeight: FontWeight.w800, color: Colors.indigo[900]), textScaleFactor: 0.7,),
                               ],
                             ),
                           ),
-                          Text(bookData.description, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),),
-                          const SizedBox(height: 30),
+                          Text(bookData.description, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800), textScaleFactor: 0.8,),
+                          SizedBox(height: MediaQuery.of(context).size.height < 550 ? 15 : 30),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.07,
                             width: MediaQuery.of(context).size.width * 0.5,
