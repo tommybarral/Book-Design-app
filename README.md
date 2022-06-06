@@ -1,9 +1,10 @@
 # book_design_app
 
-A new Flutter project.
+Book Design app / application de vente de livre.
 
 ## packages used / paquets utilisés
 
+provider: version 6.0.2
 
 
 ![original.png](images/original.png)
