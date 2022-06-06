@@ -5,10 +5,6 @@ A new Flutter project.
 ## packages used / paquets utilisés
 
 
-## TO DO : 
-
-- responsive design
-
 
 ![original.png](images/original.png)
 
